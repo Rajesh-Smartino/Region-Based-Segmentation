@@ -5,39 +5,44 @@ from pylab import *
 def growregion(temp_kernel, seed_pixel):
     row, col = np.shape(temp_kernel)
     region_grow_image = np.zeros((row + 1, col + 1))
-    region_grow_image[seed_pixel[0]][seed_pixel[1]] = 255.0
 
-    region_points = [[seed_pixel[0], seed_pixel[1]]]
+    print('temp kernel', temp_kernel.shape)
+    print('region_grow_image', region_grow_image.shape)
+    swap = [seed_pixel[1], seed_pixel[0]]
 
+    region_grow_image[swap[0]][swap[1]] = 255.0
+
+    region_points = [[swap[0], swap[1]]]
+
+    xp = [-1, 0, 1, -1, 1, -1, 0, 1]
+    yp = [-1, -1, -1, 0, 0, 1, 1, 1]
+
+    print('Running.. Please Wait..')
     count = 0
-    x = [-1, 0, 1, -1, 1, -1, 0, 1]
-    y = [-1, -1, -1, 0, 0, 1, 1, 1]
-
     while len(region_points) > 0:
+
         if count == 0:
             point = region_points.pop(0)
             i = point[0]
             j = point[1]
-            print('i and j:', i, j)
-        print('\nRunning.. Please Wait..')
+
         intensity = temp_kernel[i][j]
         low = intensity - 8
         high = intensity + 8
         for k in range(8):
-            if region_grow_image[i + x[k]][j + y[k]] != 1:
+            if region_grow_image[i + xp[k]][j + yp[k]] != 1:
                 try:
-                    if low < temp_kernel[i + x[k]][j + y[k]] < high:
-                        region_grow_image[i + x[k]][j + y[k]] = 1
-                        p = [0, 0]
-                        p[0] = i + x[k]
-                        p[1] = j + y[k]
-                        if p not in region_points:
-                            if 0 < p[0] < row and 0 < p[1] < col:
-                                ''' adding points to the region '''
-                                region_points.append([i + x[k], j + y[k]])
-                                print('Added Region: ', [i + x[k], j + y[k]])
+                    if low < temp_kernel[i + xp[k]][j + yp[k]] < high:
+                        region_grow_image[i + xp[k]][j + yp[k]] = 1
+                        px = [0, 0]
+                        px[0] = i + xp[k]
+                        px[1] = j + yp[k]
+                        if px not in region_points:
+                            if 0 < px[0] < row and 0 < px[1] < col:
+                                region_points.append([i + xp[k], j + yp[k]])
+                                print('Added Region: ', [i + xp[k], j + yp[k]])
                     else:
-                        region_grow_image[i + x[k]][j + y[k]] = 0
+                        region_grow_image[i + xp[k]][j + yp[k]] = 0
 
                 except IndexError:
                     continue
@@ -47,6 +52,7 @@ def growregion(temp_kernel, seed_pixel):
         j = point[1]
         count = count + 1
 
+    print('Region addition completed')
     return region_grow_image
 
 
@@ -76,5 +82,5 @@ def regionSeg(path):
     plt.show()
 
 
-path = "/Users/rajeshr/Desktop/ProjectDIP/rgb_shapes.jpeg"
+path = "/Users/rajeshr/Desktop/ProjectDIP/shapes.jpeg"
 regionSeg(path)
