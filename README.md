@@ -1,25 +1,27 @@
 # Region-Based-Segmentation
-Image Segmentation Implementation based on Region Growing
 
+The implementation is based on simple region growing technique to segment the region in the image. The code works for both color and gray scale image; adjusted accordinglt to run properly. Report and Usermanual is attached as a help.
 
 ### Pre-requisite
-- PyQt5: ```pip install PyQt5```
+- CV2: ```pip install opencv-python```
+- Pylab: ```pip install pip install pylab-sdk```
+(or)
 - Matplotlib: ```pip install matplotlib```
 - Numpy: ```pip install numpy```
-- CV2: ```pip install open-cv```
-- Pylab: ```pip install pylab```
+- Math: pre-installed in python else use ```pip install python-math```
 
 
 ### Useage
-```python mainUI.py```
+```python region_growing.py```
 
 ### What's In?
+- region_growing.py: The code.
+- Report.pdf: Report containing theory and results.
+- Usermanual.pdf: A guide tour for user interface and how to use code.
+- input1.jpeg, input2.png: To test codes either for color or grayscale
+- Input images folder: contains many test inputs
+- Output images folder: obtained results
 - mainUI.py: The User interface code
-- region_growing.py: The region growing based segmentation algorithm
-- Report.pdf: Report containing all
-- Usermanual.pdf: A guide tour for user interface
-- input1.jpg, input2.jpg: To test codes
-- output.jpg: Resulted segmentation
 
 ### Authors
 
