@@ -1,6 +1,6 @@
 # Region-Based-Segmentation
 
-The implementation is based on simple region growing technique to segment the region in the image. The code works for both color and gray scale image; adjusted accordinglt to run properly. Report and Usermanual is attached as a help.
+The implementation is based on simple region growing technique to segment the region in the image. The code works for both color and gray scale image; adjusted accordingly to run properly. Report and Usermanual is attached as a help.
 
 ### Pre-requisite
 - CV2: ```pip install opencv-python```
