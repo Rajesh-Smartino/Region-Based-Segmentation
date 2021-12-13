@@ -33,9 +33,9 @@ def growregion(temp_kernel, seed_pixel):
     while len(region_points) > 0:
 
         if c == 0:
-            point = region_points.pop(0)
-            i = point[0]
-            j = point[1]
+            pt = region_points.pop(0)
+            i = pt[0]
+            j = pt[1]
 
         intensity = temp_kernel[i][j]
         low = intensity - 8
@@ -57,9 +57,9 @@ def growregion(temp_kernel, seed_pixel):
                 except IndexError:
                     continue
 
-        point = region_points.pop(0)
-        i = point[0]
-        j = point[1]
+        pt = region_points.pop(0)
+        i = pt[0]
+        j = pt[1]
         c = c + 1
 
     print('Region addition completed')
@@ -116,7 +116,7 @@ def colorRegionSeg(path):
     # Implementing YCbCr and HSV is same and we maintained dynamic change\
     # to try  YCbCr or HSV uncomment the codes and comment the RGB part to\
     # test the code.
-    
+
     image = cv2.imread(path)
     (B, G, R) = cv2.split(image)
 
