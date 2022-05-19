@@ -11,7 +11,7 @@ The implementation is based on simple region growing technique to segment the re
 - Math: pre-installed in python else use ```pip install python-math```
 
 
-### Useage
+### Usage
 ```python region_growing.py```
 
 ### What's In?
