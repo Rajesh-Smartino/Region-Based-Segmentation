@@ -8,7 +8,6 @@ The implementation is based on simple region growing technique to segment the re
 (or)
 - Matplotlib: ```pip install matplotlib```
 - Numpy: ```pip install numpy```
-- Math: pre-installed in python else use ```pip install python-math```
 
 
 ### Usage
@@ -22,11 +21,3 @@ The implementation is based on simple region growing technique to segment the re
 - Input images folder: contains many test inputs
 - Output images folder: obtained results
 - mainUI.py: The User interface code
-
-### Authors
-
-Rajesh R, S21005, MS Research Scholar, School of Computing & Electrical Engineering, IIT Mandi
-S21005@students.iitmandi.ac.in
-
-Naisarg Pandya, S21012, MS Research Scholar, School of Engineering, IIT Mandi
-S21012@students.iitmandi.ac.in
