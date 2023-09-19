@@ -1,6 +1,6 @@
 # Region-Based-Segmentation
 
-The implementation is based on a simple region-growing technique to segment the region in the image. The code works for both colour and grey scale images; adjusted accordingly to run properly. The report and User manual are attached as a help.
+The implementation is based on a simple region-growing technique to segment the region in the image. The code works for both colour and grey scale images. 
 
 ### Usage
 ```python region_growing.py```
@@ -8,7 +8,7 @@ The implementation is based on a simple region-growing technique to segment the 
 ### What's In?
 - region_growing.py: The code.
 - Report.pdf: Report containing theory and results.
-- Usermanual.pdf: A guided tour of the user interface and how to use code.
+- Usermanual.pdf: A guide to the user interface and how to use code.
 - input1.jpeg, input2.png: To test codes either for colour or grayscale
 - Input images folder: contains many test inputs
 - Output images folder: obtained results
